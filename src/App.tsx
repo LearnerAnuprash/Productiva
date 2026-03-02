@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        index: true, // use 'index' instead of 'path' for the default route
+        index: true, // use 'index' instead of 'path '/' for the default route
         element: <DashboardView />,
       },
       {

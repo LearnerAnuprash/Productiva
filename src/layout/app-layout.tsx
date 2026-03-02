@@ -1,14 +1,14 @@
-import Header from "./Header";
-import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import { DividerWithoutMargin } from "../shared/components/custom-antd-style";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const AppLayout = () => {
   return (
     <div>
       <Header />
-      <main>
-        <Outlet />
-      </main>
+      <DividerWithoutMargin />
+      <Outlet />
       <Footer />
     </div>
   );

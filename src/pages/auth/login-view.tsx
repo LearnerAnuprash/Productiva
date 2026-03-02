@@ -1,5 +1,7 @@
+import React from "react";
+
 const LoginView = () => {
-  return <div className="login-view">Login View</div>;
+  return <div>LoginView</div>;
 };
 
 export default LoginView;
