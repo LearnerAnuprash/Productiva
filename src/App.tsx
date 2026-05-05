@@ -8,28 +8,33 @@ import TasksView from "./pages/tasks/tasks-view";
 
 const router = createBrowserRouter([
   {
+    path: "/",
     element: <AppLayout />,
     children: [
       {
-        index: true, // use 'index' instead of 'path '/' for the default route
+        index: true,
         element: <DashboardView />,
       },
+      {
+        path: "tasks",
+        element: <TasksView />,
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    children: [
       {
         path: "login",
         element: <LoginView />,
       },
-
       {
         path: "signup",
         element: <SignupView />,
       },
       {
-        path: "login/forgot-password",
+        path: "forgot-password",
         element: <ForgotPasswordView />,
-      },
-      {
-        path: "tasks",
-        element: <TasksView />,
       },
     ],
   },

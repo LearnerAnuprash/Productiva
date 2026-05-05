@@ -1,10 +1,24 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { ConfigProvider } from "antd";
+import "./styles/App.css";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <ConfigProvider
+    theme={{
+      token: {
+        colorPrimary: "#7F9562",
+      },
+      components: {
+        Button: {
+          colorPrimary: "#7F9562",
+          colorPrimaryHover: "#65794d",
+          colorPrimaryActive: "#65794d",
+        },
+      },
+    }}
+  >
     <App />
-  </StrictMode>,
+  </ConfigProvider>,
 );
