@@ -1,12 +1,12 @@
-import { Button, Input } from "antd";
+import { AuthImage } from "@/assets";
+import AppInput from "@/shared/components/app-text-input";
+import { Button } from "antd";
 import {
-  Controller,
   FormProvider,
   type SubmitHandler,
   type UseFormReturn,
 } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { AuthImage } from "../../../../assets";
 import type { LoginFormValues } from "../types/login.types";
 
 type LoginViewProps = {
@@ -42,46 +42,21 @@ const LoginView = ({ methods, onSubmit }: LoginViewProps) => {
               className="flex flex-col gap-5 w-full"
             >
               <div className="flex flex-col gap-4">
-                <div className="flex flex-col gap-1">
-                  <label htmlFor="email" className="font-medium">
-                    Email
-                  </label>
-                  <Controller
-                    name="email"
-                    control={methods.control}
-                    render={({ field }) => (
-                      <Input
-                        id="email"
-                        placeholder="Enter your email"
-                        size="large"
-                        {...field}
-                      />
-                    )}
-                  />
-                  <p className="text-red-500 text-sm">
-                    {methods.formState.errors.email?.message}
-                  </p>
-                </div>
+                <AppInput
+                  name="email"
+                  label="Email"
+                  placeholder="Enter your email"
+                  methods={methods}
+                />
 
                 <div className="flex flex-col gap-1">
-                  <label htmlFor="password" className="font-medium">
-                    Password
-                  </label>
-                  <Controller
+                  <AppInput
                     name="password"
-                    control={methods.control}
-                    render={({ field }) => (
-                      <Input.Password
-                        id="password"
-                        placeholder="Enter your password"
-                        size="large"
-                        {...field}
-                      />
-                    )}
+                    label="Password"
+                    placeholder="Enter your password"
+                    methods={methods}
+                    type="password"
                   />
-                  <p className="text-red-500 text-sm">
-                    {methods.formState.errors.password?.message}
-                  </p>
                   <Link to="/auth/forgot-password" className="text-end mt-1">
                     <span className="text-end underline text-gray-500 text-sm">
                       Forgot Password?
