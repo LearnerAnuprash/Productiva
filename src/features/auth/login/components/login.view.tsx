@@ -1,26 +1,20 @@
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input } from "antd";
-import { Controller, FormProvider, useForm } from "react-hook-form";
+import {
+  Controller,
+  FormProvider,
+  type SubmitHandler,
+  type UseFormReturn,
+} from "react-hook-form";
 import { Link } from "react-router-dom";
-import { z } from "zod";
-import { AuthImage } from "../../assets";
+import { AuthImage } from "../../../../assets";
+import type { LoginFormValues } from "../types/login.types";
 
-const loginSchema = z.object({
-  email: z.string().email("Please enter a valid email address"),
-  password: z.string().min(6, "Password must be at least 6 characters long"),
-});
+type LoginViewProps = {
+  methods: UseFormReturn<LoginFormValues>;
+  onSubmit: SubmitHandler<LoginFormValues>;
+};
 
-type LoginFormValues = z.infer<typeof loginSchema>;
-
-const LoginView = () => {
-  const methods = useForm<LoginFormValues>({
-    resolver: zodResolver(loginSchema),
-  });
-
-  const onSubmit = (data: LoginFormValues) => {
-    console.log(data);
-  };
-
+const LoginView = ({ methods, onSubmit }: LoginViewProps) => {
   return (
     <div className="flex h-screen">
       <img
@@ -107,7 +101,7 @@ const LoginView = () => {
 
               <div className="flex gap-1 items-center justify-center mt-2">
                 <p className="font-normal text-[15px] leading-5 text-gray-600">
-                  Don’t have an account yet?
+                  Don't have an account yet?
                 </p>
                 <Link
                   to="/auth/signup"

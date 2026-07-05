@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./layout/app-layout";
-import ForgotPasswordView from "./pages/auth/forgot-password-view";
-import LoginView from "./pages/auth/login-view";
-import SignupView from "./pages/auth/signup-view";
-import DashboardView from "./pages/dashboard/dashboard-view";
-import TasksView from "./pages/tasks/tasks-view";
+import ForgotPassword from "./pages/auth/forgot-password";
+import Login from "./pages/auth/login";
+import Signup from "./pages/auth/signup";
+import Dashboard from "./pages/dashboard/dashboard";
+import Tasks from "./pages/tasks/tasks";
 
 const router = createBrowserRouter([
   {
@@ -13,11 +13,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <DashboardView />,
+        element: <Dashboard />,
       },
       {
         path: "tasks",
-        element: <TasksView />,
+        element: <Tasks />,
       },
     ],
   },
@@ -26,15 +26,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "login",
-        element: <LoginView />,
+        element: <Login />,
       },
       {
         path: "signup",
-        element: <SignupView />,
+        element: <Signup />,
       },
       {
         path: "forgot-password",
-        element: <ForgotPasswordView />,
+        element: <ForgotPassword />,
       },
     ],
   },
