@@ -29,19 +29,19 @@ const AppInput = <T extends FieldValues>({
       <Controller
         name={name}
         control={methods.control}
-        render={({ field }) => (
-          <Input
-            id={name}
-            placeholder={placeholder}
-            size="large"
-            {...field}
-            type={type}
-          />
+        render={({ field, fieldState }) => (
+          <>
+            <Input
+              id={name}
+              placeholder={placeholder}
+              size="large"
+              {...field}
+              type={type}
+            />
+            <p className="text-red-500 text-sm">{fieldState.error?.message}</p>
+          </>
         )}
       />
-      <p className="text-red-500 text-sm">
-        {methods.getFieldState(name).error?.message}
-      </p>{" "}
     </div>
   );
 };

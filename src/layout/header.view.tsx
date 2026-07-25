@@ -5,7 +5,7 @@ import { capitalize } from "../shared/helper/data-helper";
 const Header = () => {
   return (
     <div className="flex items-center justify-between mt-1">
-      <h1 className="text-2xl font-bold">{capitalize("productiva")}</h1>
+      <h1 className="text-2xl font-bold">{capitalize("productivon")}</h1>
       <nav className="flex justify-evenly w-40">
         <Link to="/notifications">
           <BellOutlined className="text-2xl" />
