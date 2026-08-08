@@ -31,7 +31,7 @@ const SignupView = ({ methods, onSubmit }: SignupViewProps) => {
               </span>
               <h1 className="text-3xl font-bold">Create an account</h1>
               <p className="text-gray-500">
-                Enter your details to create your account.
+                Please enter your details to create an account.
               </p>
             </div>
 
