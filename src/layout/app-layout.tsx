@@ -12,7 +12,7 @@ import { Button, Layout, Menu } from "antd";
 const { Sider, Content } = Layout;
 
 const menuItems = [
-  { key: "/", icon: <DashboardOutlined />, label: "Dashboard" },
+  { key: "/dashboard", icon: <DashboardOutlined />, label: "Dashboard" },
   { key: "/tasks", icon: <UnorderedListOutlined />, label: "Tasks" },
   { key: "/calendar", icon: <CalendarOutlined />, label: "Calendar" },
 ];

@@ -1,5 +1,5 @@
 import { AuthImage } from "@/assets";
-import AppInput from "@/shared/components/app-text-input";
+import AppInput from "@/shared/components/app-input";
 import { Button } from "antd";
 import {
   FormProvider,
