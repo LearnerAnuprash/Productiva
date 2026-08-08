@@ -79,7 +79,7 @@ const LoginView = ({ methods, onSubmit }: LoginViewProps) => {
                   Don't have an account yet?
                 </p>
                 <Link
-                  to="/auth/signup"
+                  to="/signup"
                   className="text-primary-500 font-semibold text-[15px]"
                 >
                   Sign Up

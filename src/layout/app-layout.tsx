@@ -29,7 +29,7 @@ const AppLayout = () => {
         collapsible
         collapsed={collapsed}
         width={220}
-        className="!bg-background-200"
+        className="bg-background-200!"
       >
         <div className="flex items-center justify-center h-16 text-lg font-bold text-primary-700">
           {collapsed ? "P" : "Productivon"}
